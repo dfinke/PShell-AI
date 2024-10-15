@@ -27,7 +27,7 @@ Is a minimal, powerful AI assistant in your console
             Tags       = @("PowerShell", "GPT", "OpenAI", "Assistant")
             ProjectUri = "https://github.com/dfinke/PShell-AI"
             LicenseUri = "https://github.com/dfinke/PShell-AI/blob/main/LICENSE"
-            # IconUri    = 'https://raw.githubusercontent.com/dfinke/PShell-AI/main/Media/PShell-AI.png'
+            IconUri    = 'https://github.com/dfinke/PShell-AI/blob/0b2185936af2e0016f4748c7abec8c395356060f/media/PShell-AI.png'
         }
     }
 }
