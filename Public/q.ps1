@@ -7,7 +7,7 @@ function q {
     While ($true) { 
         $agentResponse = $agent | Get-AgentResponse $prompt
         Write-Host $agentResponse
-        Write-Host -ForegroundColor Gray "Follow up, Enter to copy & quit, Ctrl+C to quit."
+        Write-Host -ForegroundColor Cyan "Follow up, Enter to copy & quit, Ctrl+C to quit."
 
         $prompt = Read-Host '> '
         if ([string]::IsNullOrEmpty($prompt)) {
