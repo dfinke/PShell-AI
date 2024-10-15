@@ -2,6 +2,8 @@
 
 # PShell-AI
 
+![pshell-ai-demo](media/PShell-AI.gif)
+
 > "Ten minutes of Googling is now ten seconds in the terminal."
 >
 > ~ John D.
@@ -11,7 +13,7 @@ For developers, referencing things online is inevitable – but one can only loo
 
 ## Install
 ```powershell
-Install-Module PShell-AI -Scope CurrentUser
+Install-Module PShell-AI
 ```
 
 ## Usage
@@ -20,9 +22,22 @@ Install-Module PShell-AI -Scope CurrentUser
 
 Set your [OpenAI API key](https://platform.openai.com/api-keys).
 
+> **Note**: Make sure you add credits to your account. Otherwise you only get back blank responses.
+
 ```powershell
 $env:OpenAIKey='[your-key]'
 ```
+
+## Features
+
+- Generate shell commands from a description.
+- Reference code snippets for any programming language.
+- Fast, minimal UI.
+- Auto-extract code from response and copy to clipboard.
+- Follow up to refine command or explanation.
+- Concise, helpful responses.
+<!-- - Fast, syntax-highlighted, minimal UI. -->
+<!-- - Support for [other providers and open source models](#custom-model-configuration-new)! -->
 
 ## Examples
 
