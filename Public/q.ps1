@@ -1,4 +1,7 @@
 function q {
+    [CmdletBinding()]
+    param ()
+
     $prompt = $args -join ' '
 
     $instructions = @"
@@ -25,8 +28,3 @@ Respond with consise, accurate, and complete answers.
         }
     }
 }
-
-#q what is the capital of "france"
-# q what is the structure of a powershell module
-# q print my local ip formatted like so - ip: [0] - for my windows machine
-# q merge a branch as a single commit
