@@ -1,6 +1,6 @@
 @{
     RootModule        = 'PShell-AI.psm1'
-    ModuleVersion     = '0.1.0'
+    ModuleVersion     = '0.2.0'
     GUID              = '68e0c6dd-369a-4899-9fe7-c53deeef185d'
     Author            = 'Douglas Finke'
     CompanyName       = 'Doug Finke'
@@ -13,8 +13,9 @@ Is a minimal, powerful AI assistant in your console
     PowerShellVersion = '5.1'
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules   = @()
-
+    RequiredModules   = @(
+        @{ModuleName = 'PSAI'; ModuleVersion = "0.1.0" ; GUID = "081ce7b4-6e63-41ca-92a7-2bf72dbad018" }
+    )
     FunctionsToExport = @(
         'q'
     )
