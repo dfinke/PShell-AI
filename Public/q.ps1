@@ -1,7 +1,15 @@
 function q {
     $prompt = $args -join ' '
 
-    $instructions = "Use PowerShell unless otherwise specified."
+    $instructions = @"
+You are an expert software engineer and polyglot.
+Use PowerShell unless otherwise specified.
+
+Respond with consise, accurate, and complete answers.
+
+- just the code
+- no fence blocks
+"@
     $agent = New-Agent -Instructions $instructions 
     
     While ($true) { 
