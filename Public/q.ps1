@@ -1,6 +1,4 @@
 function q {
-    [CmdletBinding()]
-    param ()
 
     $prompt = $args -join ' '
 
