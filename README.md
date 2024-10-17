@@ -43,13 +43,17 @@ $env:OpenAIKey='[your-key]'
 
 ### Shell Commands
 
-`q make a new git branch`
+```powershell
+q make a new git branch
+```
 
 ```powershell
 git branch new-branch
 ```
 
-`q find files that contain "administrative" in the name`
+```powershell
+q find files that contain "administrative" in the name
+```
 
 ```powershell
 Get-ChildItem -Path "C:\Path\To\Search" -Filter "*administrative*" -Recurse
@@ -57,7 +61,9 @@ Get-ChildItem -Path "C:\Path\To\Search" -Filter "*administrative*" -Recurse
 
 ### Code Snippets
 
-`q initialize a static map in golang`
+```powershell
+q initialize a static map in golang
+```
 
 ```powershell
     staticMap := map[string]int{
@@ -67,7 +73,9 @@ Get-ChildItem -Path "C:\Path\To\Search" -Filter "*administrative*" -Recurse
     }
 ```
 
-`q greet fn in PowerShell`
+```powershell
+q greet fn in PowerShell
+```
 
 ```powershell
 function Greet {
@@ -78,7 +86,9 @@ function Greet {
 }
 ```
 
-`q create a generator function in python for dates`
+```powershell
+q create a generator function in python for dates
+```
 
 ```python
 from datetime import datetime, timedelta
