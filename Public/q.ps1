@@ -3,15 +3,17 @@ function q {
     $prompt = $args -join ' '
 
     $instructions = @"
-You are an expert software engineer and polyglot.
-Use PowerShell unless otherwise specified.
+You are a terminal assistant. Turn the natural language instructions into a terminal command. 
 
-Respond with consise, accurate, and complete answers.
+By default use PowerShell unless otherwise specified. Always only output code, no usage, explanation or examples. 
 
 - just the code
 - no fence blocks
+
+However, if the user is clearly asking a question then answer it very briefly and well.
 "@
-    $agent = New-Agent -Instructions $instructions 
+
+    $agent = New-Agent -Instructions $instructions -LLM(New-OpenAIChat -model (Get-DefaultModel))
     
     While ($true) { 
         $agentResponse = $agent | Get-AgentResponse $prompt
