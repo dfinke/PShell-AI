@@ -17,6 +17,8 @@ Is a minimal, powerful AI assistant in your console
         @{ModuleName = 'PSAI'; ModuleVersion = "0.1.0" ; GUID = "68662d19-a8f1-484f-b1b7-3bf0e8a436df" }
     )
     FunctionsToExport = @(
+        'Get-DefaultModel',
+        'Set-DefaultModel',
         'q'
     )
 
