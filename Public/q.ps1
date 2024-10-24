@@ -1,5 +1,7 @@
 function q {
 
+    $spectreInstalled = $null -ne (Get-Command Format-SpectrePanel -ErrorAction SilentlyContinue)
+
     $prompt = $args -join ' '
 
     $instructions = @"
@@ -17,12 +19,27 @@ However, if the user is clearly asking a question then answer it very briefly an
     
     While ($true) { 
         $agentResponse = $agent | Get-AgentResponse $prompt
-        Write-Host $agentResponse
-        Write-Host -ForegroundColor Cyan "Follow up, Enter to copy & quit, Ctrl+C to quit."
+        # Write-Host $agentResponse
+        # Write-Host -ForegroundColor Cyan "Follow up, Enter to copy & quit, Ctrl+C to quit."
+
+        if ($spectreInstalled) {
+            Format-SpectrePanel -Data (Get-SpectreEscapedText -Text $agentResponse) -Title "Agent Response" -Border "Rounded" -Color "Blue"
+
+            Format-SpectrePanel -Data "Follow up, Enter to copy & quit, Ctrl+C to quit." -Title "Next Steps" -Border "Rounded" -Color "Cyan1"
+        }
+        else {
+            Write-Host $agentResponse
+            Write-Host -ForegroundColor Green "Follow up, Enter to copy & quit, Ctrl+C to quit."
+        }
 
         $prompt = Read-Host '> '
         if ([string]::IsNullOrEmpty($prompt)) {
-            Write-Host -ForegroundColor Green "Copied to clipboard."
+            if ($spectreInstalled) {
+                Format-SpectrePanel -Data "Copied to clipboard." -Title "Information" -Border "Rounded" -Color "Green"
+            }
+            else {
+                Write-Host -ForegroundColor Green "Copied to clipboard."
+            }
             $agentResponse | clip
             break            
         }
