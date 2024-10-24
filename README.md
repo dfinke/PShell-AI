@@ -39,6 +39,18 @@ $env:OpenAIKey='[your-key]'
 <!-- - Fast, syntax-highlighted, minimal UI. -->
 <!-- - Support for [other providers and open source models](#custom-model-configuration-new)! -->
 
+
+# Enhanced Display
+
+If you install `PwshSpectreConsole` you will get a better display of the responses.
+
+```powershell
+Install-Module PwshSpectreConsole
+```
+
+![alt text](/media/PwshSpectreConsole.png)
+
+
 ## Examples
 
 ### Shell Commands

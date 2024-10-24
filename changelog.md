@@ -1,3 +1,7 @@
+# V0.2.3
+
+- Add support for `PwshSpectreConsole`
+
 # V0.2.2
 
 - Bump module version to 0.2.2 in PShell-AI.psd1
