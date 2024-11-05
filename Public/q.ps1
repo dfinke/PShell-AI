@@ -29,18 +29,25 @@ However, if the user is clearly asking a question then answer it very briefly an
         }
         else {
             Write-Host $agentResponse
-            Write-Host -ForegroundColor Green "Follow up, Enter to copy & quit, Ctrl+C to quit."
+            Write-Host -ForegroundColor Green "Follow up, Enter to type the command into the prompt, Ctrl+C to quit."
         }
 
         $prompt = Read-Host '> '
         if ([string]::IsNullOrEmpty($prompt)) {
             if ($spectreInstalled) {
-                Format-SpectrePanel -Data "Copied to clipboard." -Title "Information" -Border "Rounded" -Color "Green"
+                Format-SpectrePanel -Data "Command Inserted to Prompt." -Title "Information" -Border "Rounded" -Color "Green"
             }
             else {
-                Write-Host -ForegroundColor Green "Copied to clipboard."
+                Write-Host -ForegroundColor Green "Command Inserted to Prompt."
             }
-            $agentResponse | clip
+
+            # The below code injects the response to the command prompt.
+            $global:PSAISuggestion = $agentResponse
+            $global:InjectPSAISuggestion = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle {
+                [Microsoft.PowerShell.PSConsoleReadLine]::Insert($global:PSAISuggestion)
+                Stop-Job $global:InjectPSAISuggestion
+            }
+
             break            
         }
     }
