@@ -1,5 +1,9 @@
 # V0.2.4
 
+- Thank you [the-mentor](https://github.com/the-mentor) - message to user if prompt not specified
+
+# V0.2.4
+
 - Thank you [the-mentor](https://github.com/the-mentor) - use `Set-Clipboard` instead of `clip` to work on Linux and MacOS
 
 # V0.2.3

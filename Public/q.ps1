@@ -1,4 +1,8 @@
 function q {
+    if(-not $Args) {
+        Write-Host "Usage: q <question>"
+        break
+    }
 
     $spectreInstalled = $null -ne (Get-Command Format-SpectrePanel -ErrorAction SilentlyContinue)
 

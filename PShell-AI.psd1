@@ -1,6 +1,6 @@
 @{
     RootModule        = 'PShell-AI.psm1'
-    ModuleVersion     = '0.2.4'
+    ModuleVersion     = '0.2.5'
     GUID              = '68e0c6dd-369a-4899-9fe7-c53deeef185d'
     Author            = 'Douglas Finke'
     CompanyName       = 'Doug Finke'
